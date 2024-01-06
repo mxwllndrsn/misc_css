@@ -7,11 +7,11 @@ body {
     text-align: center;
 }
 
-.animate-circle {
-    stroke-dasharray: 2, 500;
+g {
+    stroke-dasharray: 2, 40;
     stroke-linecap: round;
     stroke: #fff;
-    animation: dash 5s linear infinite;
+    animation: dash 1s linear infinite;
 }
 
 @keyframes dash {
