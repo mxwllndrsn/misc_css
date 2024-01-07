@@ -38,7 +38,7 @@ const updateRotation= () => {
     requestAnimationFrame(updateRotation);
 }
 
-const updateWave = (time) => {
+const updateWave = () => {
     const chars = rotationElement.querySelectorAll('.char');
     const totalChars = chars.length;
 
