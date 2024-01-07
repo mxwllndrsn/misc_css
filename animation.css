@@ -1,24 +1,26 @@
-body {
-    color: #aaa;
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     background-color: #000;
 }
 
 #main {
+    color: #aaa;
     text-align: center;
 }
 
-g {
-    stroke-dasharray: 2, 40;
-    stroke-linecap: round;
-    stroke: #fff;
-    animation: dash 1s linear infinite;
+.spiral {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
 }
 
-@keyframes dash {
-    from {
-        stroke-dashoffset: 0;
-    }
-    to {
-        stroke-dashoffset: 500;
-    }
+.char {
+    font-size: 2em;
+    transform: translateY(0px) scale(1);
 }
