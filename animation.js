@@ -3,7 +3,7 @@
 let currAngle = 0;
 const speed = 0.05;
 
-const terms = '.............';
+const terms = '..........................................';
 const rotationElement= document.getElementById('rotation');
 
 const createElement = (char) => {
@@ -47,7 +47,7 @@ const updateWave = () => {
         const waveAmplitude = 20; // Height of the wave
         const translateY = Math.sin(progress * Math.PI / 180) * waveAmplitude;
         const translateX = (i / totalChars) * 500; // Spread along X-axis
-
+  
         c.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`;
     });
 
@@ -57,5 +57,23 @@ const updateWave = () => {
     requestAnimationFrame(updateWave);
 }
 
+const updateFall = () => {
+    const chars = rotationElement.querySelectorAll('.char');
+    const totalChars = chars.length;
 
-updateWave();
+    chars.forEach((c, i) => {
+        const progress = (currAngle + 360 * (i / totalChars)) % 360;
+        const waveAmplitude = 100; // Height of the wave
+        const translateY = Math.tan(progress * Math.PI / 180) * waveAmplitude;
+        const translateX = (i / totalChars) * 50; // Spread along X-axis
+  
+        c.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`;
+    });
+
+    currAngle += 1; // Control speed here
+    if (currAngle >= 360) currAngle -= 360;
+
+    requestAnimationFrame(updateFall);
+}
+
+updateFall();
