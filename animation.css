@@ -24,4 +24,5 @@ body, html {
     font-size: 2em;
     transform: translateY(0px) scale(1);
     background-color: rgba(0, 0, 0, 0);
+    position: absolute;
 }
